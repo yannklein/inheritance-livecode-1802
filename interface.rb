@@ -1,7 +1,9 @@
-# TODO
-require_relative 'lion'
+require_relative 'animal'
 require_relative 'meerkat'
+require_relative 'lion'
 require_relative 'warthog'
+
+# TODO
 # 1. Define Animal with initialize
 #    expose its name.
 
@@ -16,17 +18,14 @@ require_relative 'warthog'
 # 4. In interface.rb, create an array
 #    with Simba, Nala, Timon & Pumbaa, iterate
 #    over it and puts the sound each animal make
-simba = Lion.new("Simba")
-nala = Lion.new("Nala")
-timon = Meerkat.new("Timon")
-pumba = Warthog.new("Pumba")
-
-animals = [simba, nala, timon, pumba]
+animals = [Lion.new("Simba"),Lion.new("Nala"),Meerkat.new("Timon"), Warthog.new("Pumba")]
 animals.each do |animal|
   puts animal.talk
 end
+
 # 5. Implement a ::phyla class method which
 #    return an array
+
 
 # 6. Add an #eat(food) instance method
 #    in Animal which returns a sentence
@@ -34,5 +33,3 @@ end
 #    override this method for the Lion class,
 #    and return a sentence like 'Simba eats
 #    a gazelle. Law of the Jungle!'
-
-# Multiple cursor case preserve

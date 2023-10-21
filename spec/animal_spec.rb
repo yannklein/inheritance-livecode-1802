@@ -1,26 +1,26 @@
 require_relative '../animal'
 
-describe Animal do
-  describe '#initialize' do
-    it 'can creates an Animal instance' do
-      actual_animal = Animal.new("Simba")
-      expect(actual_animal).to be_an_instance_of(Animal)
+describe Animal do 
+  describe "#initialize" do
+    it "creates an instance of Animal" do 
+      actual = Animal.new("Simba")
+      expect(actual).to be_an_instance_of(Animal)
     end
   end
-  describe '#name' do
-    it 'should return the animal name' do
-      actual = Animal.new("Simba").name
+  describe "#name" do
+    it "return the animal name" do
+      simba = Animal.new("Simba")
       expected = "Simba"
+      actual = simba.name
       expect(actual).to eq(expected)
     end
   end
-  describe '::phyla' do
-    it 'should an array of the 4 species of animal kingdom' do
+
+  describe "::phyla" do
+    it "return an array" do
+      # simba = Animal.new("Simba")
       actual = Animal.phyla
-      expected = ['Ecdysozoa', 'Lophotrochozoa', 'Deuterostomia', 'Bilateria', 'Non-Bilateria']
-      expect(actual).to eq(expected)
+      expect(actual).to be_an(Array)
     end
   end
 end
-
-

@@ -1,11 +1,12 @@
-require_relative "animal"
+require_relative 'animal'
 
 class Lion < Animal
   def talk
-    "#{name} roars"
+    "#{@name} roars"
   end
 
   def eat(food)
-    super +  ". Law of the Jungle!"
-  end 
+    "#{super(food)}. Law of the jungle."
+  end
+
 end

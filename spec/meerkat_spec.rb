@@ -1,30 +1,35 @@
 require_relative '../meerkat'
 
-describe Meerkat do
-  describe '#initialize' do
-    it 'can creates an Meerkat instance' do
-      actual_meerkat = Meerkat.new("Timon")
-      expect(actual_meerkat).to be_an_instance_of(Meerkat)
+describe Meerkat do 
+  describe "#initialize" do
+    it "creates an instance of Meerkat" do 
+      actual = Meerkat.new("Timon")
+      expect(actual).to be_an_instance_of(Meerkat)
     end
   end
-  describe '#name' do
-    it 'should return the meerkat name' do
-      actual = Meerkat.new("Timon").name
+  describe "#name" do
+    it "return the meerkat name" do
+      timon = Meerkat.new("Timon")
       expected = "Timon"
+      actual = timon.name
       expect(actual).to eq(expected)
     end
   end
-  describe '#talk' do
-    it 'should returns a sentence like "Timon sings"' do
-      actual = Meerkat.new("Timon").talk
-      expected = "Timon sings"
+
+  describe "#talk" do
+    it "return 'Timon barks'" do
+      timon = Meerkat.new("Timon")
+      expected = 'Timon barks'
+      actual = timon.talk
       expect(actual).to eq(expected)
     end
   end
-  describe '#eat' do
-    it 'returns a sentence like "Timon eats a scorpion"' do
-      actual = Meerkat.new("Timon").eat("scorpion")
-      expected = "Timon eats a scorpion"
+
+  describe "#eat(food)" do
+    it "returns 'Timon is eating a scorpion'" do
+      timon = Meerkat.new("Timon")
+      expected = 'Timon is eating a scorpion'
+      actual = timon.eat("scorpion")
       expect(actual).to eq(expected)
     end
   end
