@@ -1,8 +1,3 @@
-require_relative 'animal'
-require_relative 'meerkat'
-require_relative 'lion'
-require_relative 'warthog'
-
 # TODO
 # 1. Define Animal with initialize
 #    expose its name.
@@ -18,7 +13,17 @@ require_relative 'warthog'
 # 4. In interface.rb, create an array
 #    with Simba, Nala, Timon & Pumbaa, iterate
 #    over it and puts the sound each animal make
-animals = [Lion.new("Simba"),Lion.new("Nala"),Meerkat.new("Timon"), Warthog.new("Pumba")]
+require_relative 'lion'
+require_relative 'meerkat'
+require_relative 'warthog'
+
+animals = [
+  Lion.new('Simba'),
+  Lion.new('Nala'),
+  Meerkat.new('Timon'),
+  Warthog.new('Pumba')
+]
+
 animals.each do |animal|
   puts animal.talk
 end

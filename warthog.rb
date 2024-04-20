@@ -1,8 +1,7 @@
 require_relative 'animal'
 
 class Warthog < Animal
-  
   def talk
-    "#{@name} grunts"
+    "#{name} grunts"
   end
 end

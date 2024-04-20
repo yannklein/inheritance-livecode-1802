@@ -1,35 +1,35 @@
 require_relative '../lion'
 
-describe Lion do 
-  describe "#initialize" do
-    it "creates an instance of Lion" do 
-      actual = Lion.new("Nala")
-      expect(actual).to be_an_instance_of(Lion)
+describe Lion do
+  describe '#initialize' do
+    it 'can create an instance of Lion' do
+      actual = Lion.new("Simba")
+      expect(actual).to be_an(Lion)
     end
   end
   describe "#name" do
-    it "return the lion name" do
-      nala = Lion.new("Nala")
-      expected = "Nala"
-      actual = nala.name
+    it 'should return the lion name'  do
+      expected = 'Simba'
+      lion = Lion.new('Simba')
+      actual = lion.name
       expect(actual).to eq(expected)
     end
   end
 
-  describe "#talk" do
-    it "return 'Nala roars'" do
-      nala = Lion.new("Nala")
-      expected = 'Nala roars'
-      actual = nala.talk
+  describe '#talk' do
+    it 'should return a sentence like "Simba roars"' do
+      expected = "Simba roars"
+      lion = Lion.new('Simba')
+      actual = lion.talk
       expect(actual).to eq(expected)
     end
   end
 
-  describe "#eat(food)" do
-    it "returns 'Nala is eating a gazelle. Law of the jungle.'" do
-      nala = Lion.new("Nala")
-      expected = 'Nala is eating a gazelle. Law of the jungle.'
-      actual = nala.eat("gazelle")
+  describe "#eat" do
+    it 'should return "Simba eats a gazelle. Law of the jungle!"' do
+      expected = "Simba eats a gazelle. Law of the jungle!"
+      lion = Lion.new('Simba')
+      actual = lion.eat('gazelle')
       expect(actual).to eq(expected)
     end
   end

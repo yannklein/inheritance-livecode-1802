@@ -1,35 +1,35 @@
 require_relative '../warthog'
 
-describe Warthog do 
-  describe "#initialize" do
-    it "creates an instance of Warthog" do 
+describe Warthog do
+  describe '#initialize' do
+    it 'can create an instance of Warthog' do
       actual = Warthog.new("Pumba")
-      expect(actual).to be_an_instance_of(Warthog)
+      expect(actual).to be_an(Warthog)
     end
   end
   describe "#name" do
-    it "return the warthog name" do
-      pumba = Warthog.new("Pumba")
-      expected = "Pumba"
-      actual = pumba.name
+    it 'should return the warthog name'  do
+      expected = 'Pumba'
+      warthog = Warthog.new('Pumba')
+      actual = warthog.name
       expect(actual).to eq(expected)
     end
   end
 
-  describe "#talk" do
-    it "return 'Pumba grunts'" do
-      pumba = Warthog.new("Pumba")
-      expected = 'Pumba grunts'
-      actual = pumba.talk
+  describe '#talk' do
+    it 'should return a sentence like "Pumba grunts"' do
+      expected = "Pumba grunts"
+      warthog = Warthog.new('Pumba')
+      actual = warthog.talk
       expect(actual).to eq(expected)
     end
   end
 
-  describe "#eat(food)" do
-    it "returns 'Pumba is eating a scorpion'" do
-      pumba = Warthog.new("Pumba")
-      expected = 'Pumba is eating a scorpion'
-      actual = pumba.eat("scorpion")
+  describe "#eat" do
+    it 'should return "Pumba eats a bug."' do
+      expected = "Pumba eats a bug."
+      warthog = Warthog.new('Pumba')
+      actual = warthog.eat('bug')
       expect(actual).to eq(expected)
     end
   end
