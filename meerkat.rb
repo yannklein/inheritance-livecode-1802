@@ -1,8 +1,6 @@
-require_relative 'animal'
-
+require_relative "animal"
 class Meerkat < Animal
   def talk
-    # name == @name == self.name
-    "#{name} barks"
+    "#{name} chirps"
   end
 end

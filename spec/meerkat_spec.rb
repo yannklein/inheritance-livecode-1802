@@ -1,35 +1,41 @@
-require_relative '../meerkat'
+require_relative "../meerkat"
 
 describe Meerkat do
-  describe '#initialize' do
-    it 'can create an instance of Meerkat' do
+  describe "#initialize" do
+    it "creates an Meerkat instance" do
       actual = Meerkat.new("Timon")
-      expect(actual).to be_an(Meerkat)
-    end
-  end
-  describe "#name" do
-    it 'should return the meerkat name'  do
-      expected = 'Timon'
-      meerkat = Meerkat.new('Timon')
-      actual = meerkat.name
-      expect(actual).to eq(expected)
+      expect(actual).to be_an_instance_of(Meerkat)
     end
   end
 
-  describe '#talk' do
-    it 'should return a sentence like "Timon barks"' do
-      expected = "Timon barks"
-      meerkat = Meerkat.new('Timon')
-      actual = meerkat.talk
+  describe "#name" do
+    it "should return the meerkat name" do
+      expected = "Timon"
+      actual = Meerkat.new("Timon").name
       expect(actual).to eq(expected)
     end
   end
 
   describe "#eat" do
-    it 'should return "Timon eats a bugs."' do
-      expected = "Timon eats a bugs."
-      meerkat = Meerkat.new('Timon')
-      actual = meerkat.eat('bugs')
+    it "should return a sentence like 'Timon eats a scorpion." do
+      expected = "Timon eats a scorpion."
+      actual = Meerkat.new("Timon").eat("scorpion")
+      expect(actual).to eq(expected)
+    end
+  end
+
+  describe "#talk" do
+    it "should return a sentence like 'Timon chirps'" do
+      expected = "Timon chirps"
+      actual = Meerkat.new("Timon").talk
+      expect(actual).to eq(expected)
+    end
+  end
+
+  describe "::phyla" do
+    it "should return an array listing the species of the meerkat kingdom" do
+      expected = ['Ecdysozoa', 'Lophotrochozoa', 'Deuterostomia', 'Bilateria', 'Non-Bilateria']
+      actual = Meerkat.phyla
       expect(actual).to eq(expected)
     end
   end

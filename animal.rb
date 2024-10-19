@@ -5,10 +5,11 @@ class Animal
   end
 
   def self.phyla
-    ["Porifera", "Nematoda", "Mollusca", "Vertebrata"]
+    ['Ecdysozoa', 'Lophotrochozoa', 'Deuterostomia', 'Bilateria', 'Non-Bilateria']
   end
 
   def eat(food)
     "#{name} eats a #{food}."
   end
 end
+
